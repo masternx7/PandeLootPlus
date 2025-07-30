@@ -19,25 +19,13 @@
   </parent>
 
   <dependencies>
-
     <!-- Spigot API -->
     <dependency>
       <groupId>org.spigotmc</groupId>
       <artifactId>spigot-api</artifactId>
       <version>1.17.1-R0.1-SNAPSHOT</version>
-      <classifier>shaded</classifier>
       <scope>provided</scope>
     </dependency>
-
-    <!-- Spigot NMS version -->
-    <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot</artifactId>
-      <version>1.17.1-R0.1-SNAPSHOT</version>
-      <classifier>remapped-mojang</classifier>
-      <scope>provided</scope>
-    </dependency>
-
   </dependencies>
 
 </project>

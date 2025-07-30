@@ -1,6 +1,5 @@
 package net.seyarada.pandeloot.drops;
 
-import io.papermc.paper.event.player.PlayerTrackEntityEvent;
 import net.seyarada.pandeloot.Constants;
 import net.seyarada.pandeloot.PandeLoot;
 import net.seyarada.pandeloot.drops.containers.LootBag;
@@ -110,14 +109,15 @@ public class ActiveDropListener implements Listener {
         }
     }
 
-    @EventHandler
-    public void onPlayerTrackEntityEvent(PlayerTrackEntityEvent event) {
-        ActiveDrop maybeTracked = ActiveDrop.get(event.getEntity());
-        if(maybeTracked==null) return;
-
-        if(maybeTracked.p.getUniqueId() != event.getPlayer().getUniqueId()) {
-            event.setCancelled(true);
-        }
-    }
+    // Paper-specific event not available in Spigot 1.21.7
+    // @EventHandler
+    // public void onPlayerTrackEntityEvent(PlayerTrackEntityEvent event) {
+    //     ActiveDrop maybeTracked = ActiveDrop.get(event.getEntity());
+    //     if(maybeTracked==null) return;
+    //
+    //     if(maybeTracked.p.getUniqueId() != event.getPlayer().getUniqueId()) {
+    //         event.setCancelled(true);
+    //     }
+    // }
 
 }

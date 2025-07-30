@@ -64,9 +64,14 @@ public class PandeLoot extends JavaPlugin implements Listener {
     void checkCompatibilities() {
         PluginManager pluginManager = getServer().getPluginManager();
         if(pluginManager.getPlugin("MythicMobs")!=null) {
-            mythicEnabled = true;
-            pluginManager.registerEvents(new MythicMobsListener(), this);
-            Logger.userInfo("Loaded MythicMobs support");
+            try {
+                mythicEnabled = true;
+                pluginManager.registerEvents(new MythicMobsListener(), this);
+                Logger.userInfo("Loaded MythicMobs support");
+            } catch (Exception e) {
+                Logger.userWarning("Failed to load MythicMobs support: " + e.getMessage());
+                mythicEnabled = false;
+            }
         }
 
         if(pluginManager.getPlugin("Vault")!=null) {

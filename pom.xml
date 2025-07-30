@@ -15,15 +15,7 @@
 
   <modules>
     <module>API</module>
-    <module>v1_17</module>
-    <module>v1_18</module>
-    <module>v1_18_2</module>
-    <module>v1_19</module>
-    <module>v1_19_2</module>
-    <module>v1_19_3</module>
-    <module>v1_20</module>
-    <module>v1_20_2</module>
-    <module>v1_20_3</module>
+    <module>v1_21_7</module>
     <module>Plugin</module>
   </modules>
 

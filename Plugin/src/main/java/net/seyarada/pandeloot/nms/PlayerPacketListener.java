@@ -12,12 +12,16 @@ public class PlayerPacketListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        NMSManager.get().injectPlayer(e.getPlayer());
+        if (NMSManager.get() != null) {
+            NMSManager.get().injectPlayer(e.getPlayer());
+        }
     }
 
     @EventHandler
     public void onPlayerQuit(PlayerQuitEvent e) {
-        NMSManager.get().removePlayer(e.getPlayer());
+        if (NMSManager.get() != null) {
+            NMSManager.get().removePlayer(e.getPlayer());
+        }
     }
 
     @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)

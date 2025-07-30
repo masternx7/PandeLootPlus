@@ -130,7 +130,7 @@ public class ActiveDrop {
                 double modHeight = height;
                 while(modHeight>0) {
                     Particle.DustOptions dustOptions = new Particle.DustOptions(org.bukkit.Color.fromRGB(color.getColor().getRed(), color.getColor().getGreen(), color.getColor().getBlue()), 1);
-                    lootDrop.p.spawnParticle(Particle.REDSTONE, e.getLocation().add(0, 0.15+modHeight, 0), 1, dustOptions);
+                    lootDrop.p.spawnParticle(Particle.DUST, e.getLocation().add(0, 0.15+modHeight, 0), 1, dustOptions);
                     modHeight = modHeight - 0.1;
                 }
             }
@@ -144,7 +144,7 @@ public class ActiveDrop {
 
             if(!e.isOnGround()) {
                 Particle.DustOptions dustOptions = new Particle.DustOptions(org.bukkit.Color.fromRGB(color.getColor().getRed(), color.getColor().getGreen(), color.getColor().getBlue()), 1);
-                lootDrop.p.spawnParticle(Particle.REDSTONE, e.getLocation(), 1, dustOptions);
+                lootDrop.p.spawnParticle(Particle.DUST, e.getLocation(), 1, dustOptions);
             }
 
         }, 0, frequency);

@@ -16,15 +16,19 @@ public class MythicSkillFlag implements IGeneralEvent {
 	public void onCallGeneral(ItemDropMeta meta) {
 		if(meta.lootDrop()==null) return;
 
-		Location origin = meta.lootDrop().getLocation();
-		String skill = meta.getString();
-		Entity caster = (meta.lootDrop().p!=null) ? meta.lootDrop().p : meta.lootDrop().sourceEntity;
-		ArrayList<Entity> targets = new ArrayList<>();
-		targets.add(caster);
-		ArrayList<Location> locationTargets = new ArrayList<>();
-		locationTargets.add(origin);
+		try {
+			Location origin = meta.lootDrop().getLocation();
+			String skill = meta.getString();
+			Entity caster = (meta.lootDrop().p!=null) ? meta.lootDrop().p : meta.lootDrop().sourceEntity;
+			ArrayList<Entity> targets = new ArrayList<>();
+			targets.add(caster);
+			ArrayList<Location> locationTargets = new ArrayList<>();
+			locationTargets.add(origin);
 
-		MythicBukkit.inst().getAPIHelper().castSkill(caster, skill, meta.lootDrop().dropEntity, origin, targets, locationTargets, 1.0f);
+			MythicBukkit.inst().getAPIHelper().castSkill(caster, skill, meta.lootDrop().dropEntity, origin, targets, locationTargets, 1.0f);
+		} catch (Exception e) {
+			// Handle MythicMobs compatibility issues silently
+		}
 	}
 	
 }

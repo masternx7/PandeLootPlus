@@ -19,7 +19,7 @@ public class FireworkFlag implements IEntityEvent {
 	public void onCallEntity(Entity entity, ItemDropMeta meta) {
 		Location loc = entity.getLocation();
 
-		Firework fw = (Firework) loc.getWorld().spawnEntity(loc, EntityType.FIREWORK);
+		Firework fw = (Firework) loc.getWorld().spawnEntity(loc, EntityType.FIREWORK_ROCKET);
 		FireworkMeta fwm = fw.getFireworkMeta();
 
 		int power = meta.getInt("power");

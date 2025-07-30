@@ -1,0 +1,36 @@
+Settings:
+  Debug: false
+  IgnoreCitizensDamage: true
+Announcements:
+  ScoreHologram:
+    - '&8&m========================'
+    - '%mob.name% &7- &a%mob.hp%HP'
+    - '&e#1 &7|&b &f%1.name% &7|&b %1.dmg%%'
+    - '&6#2 &7|&b &f%2.name% &7|&b %2.dmg%%'
+    - '&3#3 &7|&b &f%3.name% &7|&b %3.dmg%%'
+    - ''
+    - 'Your rank: &a#%player.rank% | %player.damage%'
+    - '&8&m========================'
+  ScoreMessage:
+    - '&8&m========================================'
+    - '%mob.name% &7- &a%mob.hp%HP'
+    - '&e#1 &7|&b &f%1.name% &7|&b %1.dmg%%'
+    - '&6#2 &7|&b &f%2.name% &7|&b %2.dmg%%'
+    - '&3#3 &7|&b &f%3.name% &7|&b %3.dmg%%'
+    - ''
+    - 'Your rank: &a#%player.rank%'
+    - '&8&m========================================'
+DefaultFlag:
+  Glow: true
+  Explode: true
+  Visibility: player
+  VoidProtection: 50
+onBlockBreak:
+  Enabled: false
+  Flags: '{glow=true;color=AQUA;visibility=player}'
+onBlockBreakMMO:
+  Enabled: false
+  Flags: '{glow=true;color=AQUA;visibility=player}'
+onPlayerItemDrop:
+  Enabled: false
+  Flags: '{glow=true;color=GREEN;visibility=player}'
