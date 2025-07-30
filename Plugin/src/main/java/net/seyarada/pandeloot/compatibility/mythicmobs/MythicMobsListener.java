@@ -62,6 +62,9 @@ public class MythicMobsListener implements Listener {
             DamageBoard damageBoard = DamageBoard.get(mob);
             damageBoard.compileInformation();
 
+            // แสดง hologram เพียงครั้งเดียวสำหรับทุกคน
+            boolean hologramDisplayed = false;
+
             for(UUID uuid : damageBoard.playersAndDamage.keySet()) {
                 Player player = Bukkit.getPlayer(uuid);
                 LootDrop lootDrop = new LootDrop(strings, player, e.getEntity().getLocation())
@@ -69,7 +72,11 @@ public class MythicMobsListener implements Listener {
                         .setSourceEntity(e.getEntity())
                         .build();
 
-                if(scoreHologram) lootDrop.displayScoreHolograms();
+                // แสดง hologram เฉพาะครั้งแรกเท่านั้น
+                if(scoreHologram && !hologramDisplayed) {
+                    lootDrop.displayScoreHolograms();
+                    hologramDisplayed = true;
+                }
                 if(scoreMessage) lootDrop.displayScoreMessage();
 
                 lootDrop.drop();

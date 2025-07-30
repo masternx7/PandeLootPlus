@@ -30,8 +30,11 @@ public class V1_21_7_R1 implements NMSMethods {
             }
             lY += 0.22;
             
-            // Use ArmorStand as hologram for compatibility
-            ArmorStand hologram = location.getWorld().spawn(new Location(location.getWorld(), location.getX(), lY, location.getZ()), ArmorStand.class);
+            // Use ArmorStand for reliable hologram display
+            ArmorStand hologram = location.getWorld().spawn(
+                new Location(location.getWorld(), location.getX(), lY, location.getZ()), 
+                ArmorStand.class
+            );
             hologram.setCustomName(msg);
             hologram.setCustomNameVisible(true);
             hologram.setVisible(false);
